@@ -1,13 +1,15 @@
 provider "aws" {
     region     = "ap-south-1"
-    access_key = ""
-    secret_key = ""
+    access_key = "AKIA6JKEYFIVNUPHT5OR"
+    secret_key = "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"
 }
 
 resource "aws_instance" "web" {
-  key_name      = "new_project"
+  key_name      = var.key_name
   ami           = "ami-03edbe403ec8522ed" 
   availability_zone = var.availability_zone
+  vpc_security_group_ids = [var.existing_sg_id]
+
   instance_type = var.instance_type
 
 tags = {
