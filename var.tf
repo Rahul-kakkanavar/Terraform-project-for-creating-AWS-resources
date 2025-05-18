@@ -52,3 +52,15 @@ variable "bucket-name" {
     default     = "job-simulation-bucket-7510"
   
 }
+
+variable "existing_sg_id" {
+  description = "ID of an existing Security Group"
+  type        = string
+}
+
+variable "key_name" {
+  description = "The name of the existing EC2 key pair"
+  type        = string
+}
+
+
